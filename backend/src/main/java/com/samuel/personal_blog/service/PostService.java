@@ -5,14 +5,14 @@ import com.samuel.personal_blog.dto.PostResponse;
 import com.samuel.personal_blog.dto.UpdatePostRequest;
 import com.samuel.personal_blog.entity.Post;
 import com.samuel.personal_blog.repository.PostRepository;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class PostService {
 
     private final PostRepository postRepository;
