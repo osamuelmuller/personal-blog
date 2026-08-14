@@ -6,13 +6,12 @@ import com.samuel.personal_blog.dto.UpdatePostRequest;
 import com.samuel.personal_blog.service.PostService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("api/post")
+@RestController
+@RequestMapping("/api/post")
 @RequiredArgsConstructor
 public class PostController {
 
