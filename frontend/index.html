@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Blog</title>
-	
-	<script src="script.js"></script>
+
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -24,7 +24,7 @@
     
     <section>
     	<h2>Create post</h2>
-    	<form action="/submit-form" method="POST">
+    	<form id="create-post">
     	    <div>
     	    	<label for="post-title">Title</label>
     	    	<input type="text" id="post-title" name="post-title" placeholder="Enter title" required>
@@ -81,5 +81,6 @@
     	</form>
     </section>
     
+	<script src="script.js"></script>
 </body>
 </html>

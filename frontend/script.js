@@ -1,5 +1,7 @@
 const API_URL = "http://localhost:8080";
 
+// load posts function
+
 async function loadPosts() {
     
     const response = await fetch(`${API_URL}/api/post`);
@@ -29,3 +31,48 @@ async function loadPosts() {
 
 loadPosts()
 
+// create post function
+
+const createForm = document.getElementById("create-post");
+
+createForm.addEventListener("submit", async function(event) {
+    
+    event.preventDefault();
+
+    const post = {
+        title: document.getElementById("post-title").value,
+        content: document.getElementById("post-content").value
+    };
+
+    try {
+
+        const response = await fetch(`${API_URL}/api/post`, {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(post)
+            });
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.error}`);
+        }
+
+        const savedPost = await response.json();
+
+        console.log(savedPost);
+
+        createForm.reset();
+
+        await loadPosts();
+
+        alert("Post created!");
+
+    } catch (error) {
+
+        console.error("Error: ", error);
+
+        alert("Could not connect to the API.");
+
+    }
+})
