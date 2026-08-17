@@ -20,7 +20,7 @@ public class PostService {
     private PostResponse toResponse(Post post) {
         return PostResponse.builder()
                 .id(post.getId())
-                .name(post.getTitle())
+                .title(post.getTitle())
                 .content(post.getContent())
                 .date(post.getDate())
                 .build();
